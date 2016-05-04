@@ -48,8 +48,8 @@ class Giphy
         $response = $this->guzzle->post(self::UPLOAD_ENDPOINT.'?'.implode('&', $this->options));
         $json = $response->getBody()->getContents();
         $decodedJson = json_decode($json);
-        if ($decodedJson->meta->status == 403) {
-            throw new \Exception('Upload Giphy failed: Status: '.$decodedJson->meta->status);
+        if ($decodedJson->meta->status != 200) {
+            throw new \Exception('Upload Giphy failed: '.$decodedJson->meta->msg, $decodedJson->meta->status);
         }
         return $decodedJson->data->id;
     }

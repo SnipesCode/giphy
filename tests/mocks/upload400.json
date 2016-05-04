@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "status": 400,
+    "msg": "Bad Request - Remote file https://upload.wikimedia.org/wikipedia/en/2/2d/ST_TOS_Cast.jpg could not be retrieved."
+  }
+}

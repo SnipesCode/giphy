@@ -63,6 +63,13 @@ class GiphyTest extends \PHPUnit_Framework_TestCase
                     'file_url' => 'http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif',
                     'labels' =>  array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru')
                 )
+            ],
+            [
+                'dc6zaTOxFJmzC', 'username', '/tests/mocks/upload400.json',
+                array(
+                    'file_url' => 'https://upload.wikimedia.org/wikipedia/en/2/2d/ST_TOS_Cast.jpg',
+                    'labels' =>  array('Star Trek Crew')
+                )
             ]
         ];
     }
@@ -84,7 +91,7 @@ class GiphyTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
 
         $giphySDK = new Giphy($apiKey, $username, ['handler' => $handler, 'base_uri' => self::BASE_URL]);
-        $response = $giphySDK->upload(
+        $giphySDK->upload(
             $params['file_url'],
             $params['labels']
         );
