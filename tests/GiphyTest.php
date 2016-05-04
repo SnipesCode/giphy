@@ -77,7 +77,7 @@ class GiphyTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @dataProvider forbiddenProvider
-     * @expectedException GuzzleHttp\Exception\ClientException
+     * @expectedException Snipes\GiphySDK\GiphyUploadException
      */
     public function uploadForbidden($apiKey, $username, $mockFile, $params = array())
     {
@@ -90,7 +90,7 @@ class GiphyTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mock);
 
-        $giphySDK = new Giphy($apiKey, $username, ['base_uri' => self::BASE_URL]);
+        $giphySDK = new Giphy($apiKey, $username, ['handler' => $handler, 'base_uri' => self::BASE_URL]);
         $giphySDK->upload(
             $params['file_url'],
             $params['labels']

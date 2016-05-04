@@ -45,11 +45,15 @@ class Giphy
         if (!empty($tags)) {
             $this->options['tags'] = 'tags='.implode(',', $tags);
         }
-        $response = $this->guzzle->post(self::UPLOAD_ENDPOINT.'?'.implode('&', $this->options));
-        $json = $response->getBody()->getContents();
-        $decodedJson = json_decode($json);
+        try {
+            $response = $this->guzzle->post(self::UPLOAD_ENDPOINT.'?'.implode('&', $this->options));
+            $json = $response->getBody()->getContents();
+            $decodedJson = json_decode($json);
+        } catch (\Exception $e) {
+            throw new GiphyUploadException('Upload Giphy failed: '.$e->getMessage(), $e->getCode());
+        }
         if ($decodedJson->meta->status != 200) {
-            throw new \Exception('Upload Giphy failed: '.$decodedJson->meta->msg, $decodedJson->meta->status);
+            throw new GiphyUploadException('Upload Giphy failed: '.$decodedJson->meta->msg, $decodedJson->meta->status);
         }
         return $decodedJson->data->id;
     }
