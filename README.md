@@ -21,7 +21,7 @@ $giphyId = $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif
 
 ```
 
-You can locate the uploaded git at http://media2.giphy.com/media/$giphyId/giphy.gif
+You can locate the uploaded GIF at http://media2.giphy.com/media/$giphyId/giphy.gif
 
 # Documentation
 
