@@ -27,7 +27,16 @@ $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('K
 
 #### upload
 
-Prints information when running in debug mode. String, array, or object can be provided as argument.
+@param $apiKey
+@param $username
+@param array $config
+     
+####  __construct($apiKey, $username, $config = array())
+
+@param string $file Could be a file or URL
+@tags array
+
+#### upload($file, $tags)
 
 #### Contributions
 
