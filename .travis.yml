@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 5.4
+
+install:
+  - git clone https://github.com/snipescode/giphy.git
+
+before_script:
+  - php composer.phar install
+
+script:
+  - ./vendor/phpunit/phpunit/phpunit tests --coverage-clover report/clover.xml
+ # - php infrastructure/coverage-checker.php report/clover.xml 80
+
+after_success:
+  #- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && /bin/bash infrastructure/jenkins-build.sh
