@@ -23,10 +23,6 @@ $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('K
 
 # Documentation
 
-#### __construct($apiKey,
-
-#### upload
-
 @param $apiKey
 @param $username
 @param array $config
