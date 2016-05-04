@@ -17,9 +17,11 @@ php composer.phar require "snipescode/giphy"
 ``` php
 <?php
 $giphy = new Giphy('api_key', 'username'));
-$giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
+$giphyId = $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
 
 ```
+
+You can locate the uploaded git at http://media2.giphy.com/media/$giphyId/giphy.gif
 
 # Documentation
 
