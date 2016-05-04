@@ -1,7 +1,4 @@
-# giphy
-Giphy SDK PHP
-
-[![Build Status](https://secure.travis-ci.org/SnipesCode/giphy.png?branch=master)](http://travis-ci.org/SnipesCode/giphy)
+# Giphy SDK PHP [![Build Status](https://secure.travis-ci.org/SnipesCode/giphy.png?branch=master)](http://travis-ci.org/SnipesCode/giphy)
 
 ## Requeriments
 * PHP 5.5
