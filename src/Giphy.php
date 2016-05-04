@@ -20,7 +20,7 @@ class Giphy
     /**
      * @param $apiKey
      * @param $username
-     * @param array $options
+     * @param array $config
      */
     public function __construct($apiKey, $username, $config = array())
     {
@@ -34,6 +34,9 @@ class Giphy
 
     /**
      * @param string $file Could be a file or URL
+     * @tags array
+     * @return integer FileId
+     * @throws GiphyUploadException
      */
     public function upload($file, $tags = array())
     {
