@@ -11,13 +11,17 @@ Giphy SDK PHP
 php composer.phar require "snipescode/giphy"
 ```
 ## Gettting Started
-# Required:
+### Required:
 * Giphy Beta API Key: dc6zaTOxFJmzC
 * Username: Your Giphy Username
 
+### Upload an animated GIF
 ``` php
 <?php
 $giphy = new Giphy('api_key', 'username'));
 $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
 
 ```
+#### Contributions
+
+At SnipesCode we are glad to receive contributions from the community.
