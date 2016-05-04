@@ -36,6 +36,7 @@ You can locate the uploaded GIF at http://media2.giphy.com/media/$giphyId/giphy.
  * @param string $file Could be a file or URL
  * @tags array
  */
+
 #### upload($file, $tags = array())
 
 #### Contributions
