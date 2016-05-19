@@ -1,5 +1,5 @@
 {
-    "name": "snipescode/giphy-sdk",
+    "name": "snipescode/giphy",
     "description": "Giphy SDK for PHP",
     "license": "Apache-2.0",
     "require": {
