@@ -26,6 +26,13 @@ class GiphyTest extends \PHPUnit_Framework_TestCase
                     'file_url' => 'http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif',
                     'labels' =>  array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru')
                 )
+            ],
+            [
+                'dc6zaTOxFJmzC', 'username', '/tests/mocks/uploadFile200.json',
+                array(
+                    'file_url' => '/home/startrek/cut.mp4',
+                    'labels' =>  array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru')
+                )
             ]
         ];
     }

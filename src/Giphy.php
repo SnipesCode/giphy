@@ -40,8 +40,12 @@ class Giphy
      */
     public function upload($file, $tags = array())
     {
+        $params = array();
         if (file_exists($file)) {
-            $this->options['file'] = "file=@$file";
+            $params['multipart'] = [
+                    ['name' => 'file', 'contents' => fopen($file, 'r')
+                ]
+            ];
         } else {
             $this->options['source_image_url'] = 'source_image_url='.$file;
         }
@@ -49,7 +53,7 @@ class Giphy
             $this->options['tags'] = 'tags='.implode(',', $tags);
         }
         try {
-            $response = $this->guzzle->post(self::UPLOAD_ENDPOINT.'?'.implode('&', $this->options));
+            $response = $this->guzzle->post(self::UPLOAD_ENDPOINT.'?'.implode('&', $this->options), $params);
             $json = $response->getBody()->getContents();
             $decodedJson = json_decode($json);
         } catch (\Exception $e) {
