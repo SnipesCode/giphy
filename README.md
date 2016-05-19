@@ -17,7 +17,11 @@ php composer.phar require "snipescode/giphy"
 ``` php
 <?php
 $giphy = new Giphy('api_key', 'username'));
-$giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
+$giphyId = $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
+
+You can locate the uploaded GIF at http://media2.giphy.com/media/$giphyId/giphy.gif
+
+# Documentation
 
 ```
 
@@ -26,13 +30,15 @@ $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('K
      * @param $username
      * @param array $config
      */
-     
+
 ####  __construct($apiKey, $username, $config = array())
 
-@param string $file Could be a file or URL
-@tags array
+ /**
+ * @param string $file Could be a file or URL
+ * @tags array
+ */
 
-#### upload($file, $tags)
+#### upload($file, $tags = array())
 
 #### Contributions
 
