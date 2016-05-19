@@ -19,9 +19,10 @@ php composer.phar require "snipescode/giphy"
 $giphy = new Giphy('api_key', 'username'));
 $giphyId = $giphy->upload('http://media2.giphy.com/media/YvJr0wQP8yR8I/giphy.gif', array('Kirk (Alternate)', 'Star Trek (2009)', 'Kobayashi Maru'));
 
+```
+
 You can locate the uploaded GIF at http://media2.giphy.com/media/$giphyId/giphy.gif
 
-```
 # Documentation
 
 
